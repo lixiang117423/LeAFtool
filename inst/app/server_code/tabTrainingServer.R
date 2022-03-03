@@ -75,7 +75,7 @@ observeEvent(
 
         #source("/media/sebastien/Bayer/ScriptsSEB/LEAFTOOL/images/R/training_functions_V6.r")
         tryObserve({
-          results <- training(rv$dirTraining,method=rv$inputMethod, transform=NULL, colormodel=rv$inputColorModel, mode = "GUI")
+          results <- LeAFtool::training(rv$dirTraining,method=rv$inputMethod, transform=NULL, colormodel=rv$inputColorModel, mode = "GUI")
           rv$outTrainingTable <- results$tableTrain
           rv$errorRate <- results$errorRate
 

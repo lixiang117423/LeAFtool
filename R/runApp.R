@@ -28,9 +28,9 @@
 #####################################################################################################
 
 
-
+# 计算CPU核数
 library(parallel)
-max_no_cores <- as.numeric(max(1, parallel::detectCores() - 2))
+max_no_cores <- as.numeric(max(1, parallel::detectCores() - 1))
 
 
 #' Launch LeAFtool GUI

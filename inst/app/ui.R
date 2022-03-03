@@ -35,10 +35,15 @@
 #}
 #set_wd()
 
+# 限制文件大小
+options(shiny.maxRequestSize = 99999*1024^2)
 
 ############################################
 ## Shiny dashboard start
 ############################################
+
+# loading packages
+library(LeAFtool)
 
 # add header
 header <- dashboardHeader(title = img(src = "LeAFtool-long.png", class = 'img-responsive'), titleWidth = 400)
@@ -48,6 +53,7 @@ sidebar <- dashboardSidebar(
   width = 150,
   sidebarMenu(
     menuItem("Home", tabName = "tabHome", icon = icon("home")),
+    menuItem("Up/Down-load", tabName = "tabUpload", icon = icon("list")),
     menuItem("Training", tabName = "tabTraining", icon = icon("balance-scale")),
     menuItem("Analysis", tabName = "tabAnalysis", icon = icon("pagelines")),
     menuItem("Edit", tabName = "tabEdit", icon = icon("edit")),
@@ -90,6 +96,9 @@ body <- dashboardBody(
   tabItems(
     # add tab for Home
     source(file.path("ui_code", "tabHomeUI.R"), local = TRUE, chdir = TRUE)$value,
+    
+    # add tab upload data
+    source(file.path("ui_code", "tabUploadUI.R"), local = TRUE, chdir = TRUE)$value,
 
     # add tab for Training
     source(file.path("ui_code", "tabTrainingUI.R"), local = TRUE, chdir = TRUE)$value,

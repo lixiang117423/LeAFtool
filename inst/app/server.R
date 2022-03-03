@@ -29,6 +29,8 @@
 # options(shiny.port = 3838)
 # options(shiny.host = "194.254.138.139")
 
+library(LeAFtool)
+
 # Create a file logger:
 clearLoggers() # reset log file
 rv$logfilename <- tempfile()
@@ -40,13 +42,18 @@ logInfo("Hello to LeAFtool !!!!")
 ## writing server function
 ############################################
 
+
 shinyServer(function(input, output, session) {
 
   observe_helpers(withMathJax = TRUE) # active help icon
-
+  
+  # upload data
+  
+  source(file.path("server_code", "tabUploadServer.R"), local = TRUE)$value
+  
   # Load functions for tab Training
   source(file.path("server_code", "tabTrainingServer.R"), local = TRUE)$value
-
+  
   # Load functions for tab analysis
   source(file.path("server_code", "tabAnalysisServer.R"), local = TRUE)$value
 

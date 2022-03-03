@@ -196,8 +196,13 @@ tabItem(# Tab for Home input/output
                 " Sébastien RAVEL - ", a(href='mailto:sebastien.ravel@cirad.fr',"sebastien.ravel@cirad.fr")
               ),
               p(align='right',
+                u("contacts :"),
+                " Xiang LI - ", a(href='mailto:lixiang117423@foxmail.com',"lixiang117423@foxmail.com")
+              ),
+              p(align='right',
                 a(href='http://umr-bgpi.cirad.fr/', img(style = 'width: 7%;', src='logo-bgpi.png')),
-                a(href='https://www.cirad.fr', img(style = 'width:8%;', src='logo-cirad.png'))
+                a(href='https://www.cirad.fr', img(style = 'width:8%;', src='logo-cirad.png')),
+                a(href='http://english.ynau.edu.cn/', img(style = 'width:5%;', src='logo-ynau.png'))
               )
             )
           )
